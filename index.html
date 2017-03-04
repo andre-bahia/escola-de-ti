@@ -1,0 +1,131 @@
+		<html>
+		<head>
+			<title>Projeto</title>
+		     <link rel="stylesheet" href="assets/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+			<script>
+				var Produto = [];
+				buscaProduto();
+				function formSubmit () {
+					var data = {};
+					var codigo = document.getElementById('codigo').value;
+					var nome = document.getElementById('nome').value;
+					var preco = document.getElementById('preco').value;
+					var estoque = document.getElementById('estoque').value;
+
+					data.codigo = codigo;
+					data.nome = nome;
+					data.preco = preco;
+					data.estoque = estoque;
+					Produto.push(data);
+					listaProdutos();
+				}
+				
+				function listaProdutos() {
+					var id = 0;
+					for(var p in Produto) {
+						id = id + 1;
+						var data = '<tr>'+
+							'<td>'+id+'</td>'+
+					        '<td>'+Produto[p].codigo+'</td>'+
+					        '<td>'+Produto[p].nome+'</td>'+					        
+					        '<td>'+Produto[p].preco+'</td>'+
+					        '<td>'+Produto[p].estoque+'<td>'+
+					      '</tr>';
+					}
+					document.getElementById("demo").innerHTML += data;
+				}
+
+				function buscaProduto(){
+					
+				}
+
+			</script>
+		</head>
+		<body>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Projeto</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Produto <span class="sr-only">(current)</span></a></li>
+		        <li><a href="#">Compra</a></li>
+		        <li><a href="#">Venda</a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatórios <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Produtos</a></li>
+		            <li><a href="#">Compras</a></li>
+		            <li><a href="#">Vendas</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+				</div> 
+				<div class="col-md-6">
+					<div class="input-group">
+				      <input type="text" class="form-control" placeholder="Pesquisar produto" id="filtro-nome">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default" type="button">Go!</button>
+				      </span>
+				    </div><!-- /input-group -->
+				</div> 
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+				    <label for="">Codigo</label>
+				    <input type="text" class="form-control" placeholder="" id="codigo" name="codigo">
+					  </div>
+					  <div class="form-group">
+					    <label for="">Nome</label>
+					    <input type="text" class="form-control" placeholder="" id="nome" name="nome">
+					  </div>
+					   <div class="form-group">
+					    <label for="">Preço</label>
+					    <input type="number" class="form-control" placeholder="" id="preco" name="preco">
+					  </div>
+					   <div class="form-group">
+					    <label for="">Estoque</label>
+					    <input type="text" class="form-control" placeholder="" id="estoque" name="estoque">
+					  </div>
+				  	  <a type="submit" class="btn btn-default" onClick="formSubmit()" >Cadastrar</a>
+				</div>
+				<div class="col-md-6">
+					<table class="table table-hover" id="lista">
+						<thead>
+					      <tr>
+					        <th>#</th>
+					        <th>Código</th>
+					        <th>Nome</th>
+					        <th>Preço</th>
+					        <th>Estoque</th>
+					      </tr>
+					    </thead>
+					    <tbody id="demo">
+					    </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		</body>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
+		</html>

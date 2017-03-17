@@ -5,18 +5,18 @@ var app = angular.module("app", ["ngRoute"]).config(function($routeProvider){
   .when('/', {
     templateUrl: 'templates/home.html'
   })
-  .when('/clientes', {
-    templateUrl: 'templates/clientes.html',
-    controller: 'clientesCtrl',
+  .when('/pedido', {
+    templateUrl: 'templates/pedido.html',
+    controller: 'pedidosCtrl',
   })
-  .when('/clientes/cadastrar', {
-    templateUrl: 'templates/clientes-form.html',
-    controller: 'clientesCtrl',
+  .when('/pedido/cadastrar', {
+    templateUrl: 'templates/pedido-form.html',
+    controller: 'pedidosCtrl',
     method: 'cadastrar'
   })
-  .when('/clientes/:id/editar', {
-    templateUrl: 'templates/clientes-form.html',
-    controller: 'clientesCtrl',
+  .when('/pedido/:id/editar', {
+    templateUrl: 'templates/pedido-form.html',
+    controller: 'pedidosCtrl',
     method: 'editar'
   })
   .when('/produtos', {

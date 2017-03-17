@@ -1,0 +1,68 @@
+<div class="right_col" role="main">
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>{{titulo}}</h2>
+              <div class="clearfix"></div>
+              <div class="x_content">
+                <br />
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <label class="alert-form">
+                    Atenção(*) Campos obrigatórios!
+                  </label>
+                </div>
+                <form id="demo-form2" name="appForm" data-parsley-validate class="form-horizontal form-label-left" ng-submit="submit(client, address)" novalidate>
+                  <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-12" for="nome">Codigo <span class="required">*</span>
+                    </label>
+                    <div class="col-md-10 col-sm-10 col-xs-12">
+                      <input type="text" id="codigo" name="codigo" ng-model="pedido.codigo" class="form-control col-md-7 col-xs-12">
+                      <span ng-if="appForm.codigo.$invalid && appForm.codigo.$dirty" class="message-error">Campo obrigatorio!</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-12" for="date_birth">Data de emissao<span class="required">*</span>
+                    </label>
+                    <div class="col-md-10 col-sm-10 col-xs-12">
+                      <input type="text" name="emissao" ng-model="pedido.emissao" class="form-control col-md-7 col-xs-12">
+                      <span ng-if="appForm.emissao.$invalid && appForm.emissao.$dirty" class="merror">Campo obrigatorio</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-offset-2 col-md-offset-2 col-md-10 col-sm-10">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Codigo</th>
+                              <th>Nome</th>
+                              <th>Quantidade</th>
+                              <th>Preco</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ln_solid"></div>
+                  <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                      <button type="submit" class="btn btn-success" ng-disabled="appForm.$invalid" ng-hide="loading">
+                        Cadastrar pedido
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

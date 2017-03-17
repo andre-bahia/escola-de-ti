@@ -1,0 +1,51 @@
+<div class="right_col" role="main">
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div >
+              <h2><i class="fa fa-users" aria-hidden="true"></i> Clientes</h2>
+            </div>
+            <div class="x_content">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Sexo</th>
+                    <th>Data de nascimenro</th>
+                    <th>Endereço</th>
+                    <th>
+                      <a href="#/clientes/cadastrar" class="btn btn-success btn-xs">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i> Novo cliente
+                      </a>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="client in clients">
+                    <th scope="row">{{client.id}}</th>
+                    <td>{{client.name}}</td>
+                    <td ng-if="client.sex == 'M'">Masculino</td>
+                    <td ng-if="client.sex == 'F'">Feminino</td>
+                    <td>{{client.date_birth}}</td>
+                    <td>{{client.address}} - {{client.number}} - {{client.city}} / {{client.state}}</td>
+                    <td>
+                      <a href="#/clientes/{{client.id}}/editar" class="btn btn-info btn-xs">
+                        <i class="fa fa-pencil"></i> Editar
+                      </a>
+                      <a  class="btn btn-danger btn-xs" ng-click="confirmarExclusao(client.id, client.name)">
+                        <i class="fa fa-trash-o"></i> Deletar
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

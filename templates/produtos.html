@@ -1,0 +1,48 @@
+<div class="right_col" role="main">
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div >
+              <h2><i class="fa fa-users" aria-hidden="true"></i> Produtos</h2>
+            </div>
+            <div class="x_content">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Codigo</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                    <th>
+                      <a href="#/produtos/cadastrar" class="btn btn-success btn-xs">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i> Novo produto
+                      </a>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="produto in produtos">
+                    <th scope="row">{{produto.codigo}}</th>
+                    <td>{{produto.nome}}</td>
+                    <td >{{produto.preco}}</td>
+                    <td>{{produto.estoque}}</td>
+                    <td>
+                      <a href="#/produtos/{{produtos.id}}/editar" class="btn btn-info btn-xs">
+                        <i class="fa fa-pencil"></i> Editar
+                      </a>
+                      <a  class="btn btn-danger btn-xs" ng-click="confirmarExclusao(produtos.id, produtos.name)">
+                        <i class="fa fa-trash-o"></i> Deletar
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,33 +1,23 @@
 'use script';
 app.controller("pedidosCtrl", function($scope, $rootScope, $route, $window, $routeParams, $timeout) {
 
-
-  //Inicializando os objetos
   $scope.pedido = {};
 
-
-  //----------------------------------------------------------------------------------------------------------
   $scope.listar = function(){
     console.log("aqui");
   };
 
-  //----------------------------------------------------------------------------------------------------------
   $scope.cadastrar = function(){
     $scope.tituloBtnSubmit = "Cadastrar";
     $scope.titulo = "Cadastro de pedidos";
   };
 
-  //----------------------------------------------------------------------------------------------------------
   $scope.editar = function(){
     $scope.tituloBtnSubmit = "Alterar";
     $scope.titulo = "Alterar pedido"
 
-    // Busca os dados do cliente que deseja editar passando o parametro usando uma diretiva do
-    // angular $routeParams que pega o parametro passado na url
-
   };
 
-  //----------------------------------------------------------------------------------------------------------
   $scope.confirmarExclusao = function(id, nome){
     $rootScope.btnDeleteMsg = "Deletar";
     $rootScope.msgModulo = "o Pedido";
@@ -37,8 +27,7 @@ app.controller("pedidosCtrl", function($scope, $rootScope, $route, $window, $rou
     $rootScope.id = id;
     $rootScope.name = nome;
   };
-  //Faz a requisição no back-end fazendo a exclusão do cliente passando o id como parametro
-  //----------------------------------------------------------------------------------------------------------
+
   $rootScope.deletar = function(id, nome){
 
     $rootScope.loadingDelete = true;
@@ -46,7 +35,6 @@ app.controller("pedidosCtrl", function($scope, $rootScope, $route, $window, $rou
 
   };
 
-  //----------------------------------------------------------------------------------------------------------
   $scope.submit = function(client, address){
     $scope.loading = true;
 

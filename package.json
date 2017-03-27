@@ -1,0 +1,23 @@
+{
+  "name": "escola-de-ti",
+  "version": "1.0.0",
+  "description": "Aplicação básica com angularJs",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andre-bahia/escola-de-ti.git"
+  },
+  "author": "André Luis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andre-bahia/escola-de-ti/issues"
+  },
+  "homepage": "https://github.com/andre-bahia/escola-de-ti#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1"
+  }
+}
